@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<StackPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lab10.MainController">
+
+    <VBox fx:id="mainScene" alignment="TOP_CENTER" spacing="15" styleClass="main-scene" stylesheets="@styles.css">
+        <padding>
+            <Insets bottom="10" left="10" right="10" top="10" />
+        </padding>
+        <Label alignment="TOP_CENTER" contentDisplay="TOP" nodeOrientation="LEFT_TO_RIGHT" text="GAME MANIA" textFill="RED">
+            <font>
+                <Font name="Courier New" size="60.0" />
+            </font>
+            <effect>
+                <Blend mode="HARD_LIGHT" />
+            </effect></Label>
+        <TextField fx:id="searchField" alignment="TOP_CENTER" prefHeight="40.0" prefWidth="606.0" promptText="Enter game title..." styleClass="search-field" />
+        <Button onAction="#searchGames" prefHeight="26.0" prefWidth="168.0" styleClass="search-button" text="Search Games">
+            <effect>
+                <DropShadow blurType="GAUSSIAN">
+                    <color>
+                        <Color red="1.0" />
+                    </color>
+                </DropShadow>
+            </effect>
+            <cursor>
+                <Cursor fx:constant="OPEN_HAND" />
+            </cursor></Button>
+        <ListView fx:id="gameListView" onMouseClicked="#showGameDetails" prefHeight="399.0" prefWidth="607.0" styleClass="game-list-view" />
+    </VBox>
+    <VBox fx:id="detailsScene" styleClass="details-scene" spacing="15" visible="false">
+        <padding>
+            <Insets bottom="10" left="10" right="10" top="10" />
+        </padding>
+        <VBox styleClass="details-box">
+            <Label fx:id="nameLabel" styleClass="name-label"/>
+            <!-- Add ScrollPane to wrap the descriptionLabel -->
+            <ScrollPane fx:id="descriptionScrollPane" fitToWidth="true" prefHeight="300">
+                <content>
+                    <Label fx:id="descriptionLabel" styleClass="label-description" wrapText="true"/>
+                </content>
+            </ScrollPane>
+
+        </VBox>
+
+        <Button onAction="#goBack" styleClass="back-button" text="Back" />
+    </VBox>
+
+</StackPane>

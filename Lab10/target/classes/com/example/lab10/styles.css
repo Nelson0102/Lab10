@@ -1,0 +1,30 @@
+/* Main VBox alignment and spacing */
+VBox {
+    -fx-alignment: center;
+    -fx-spacing: 20;
+}
+
+/* Padding for the VBox */
+VBox > .padding {
+    -fx-padding: 20;
+}
+
+/* Label styling */
+Label {
+    -fx-font-size: 16px;
+    -fx-font-family: Arial;
+}
+
+/* Button styling */
+Button {
+    -fx-padding: 10px;
+    -fx-text-fill: white;
+    -fx-background-color: #4caf50;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+/* Button hover effect */
+Button:hover {
+    -fx-background-color: #45a049;
+}
